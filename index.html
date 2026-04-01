@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For Chrisha 💌</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --rose:   #ff5e84;
+      --peach:  #ffaa6e;
+      --sky:    #5ec8f5;
+      --mint:   #5ef5b0;
+      --lilac:  #c579f5;
+      --cream:  #fffaf5;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: #2b2b2b;
+      overflow-x: hidden;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+      background: linear-gradient(160deg, #ffe8f0 0%, #fff8e1 35%, #e0f4ff 65%, #f3e8ff 100%);
+      overflow: hidden;
+    }
+
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(72px);
+      opacity: 0.5;
+      animation: floatBlob 9s ease-in-out infinite;
+    }
+    .b1 { width:360px; height:360px; background:var(--rose);  top:-100px;   left:-100px;  animation-delay:0s; }
+    .b2 { width:300px; height:300px; background:var(--peach); bottom:-80px; right:-80px;  animation-delay:2.5s; }
+    .b3 { width:220px; height:220px; background:var(--sky);   top:35%;      right:8%;     animation-delay:4.5s; }
+    .b4 { width:200px; height:200px; background:var(--lilac); bottom:18%;   left:6%;      animation-delay:1.5s; }
+    .b5 { width:160px; height:160px; background:var(--mint);  top:20%;      left:25%;     animation-delay:3s; }
+
+    @keyframes floatBlob {
+      0%,100% { transform: translateY(0) scale(1); }
+      50%      { transform: translateY(-28px) scale(1.07); }
+    }
+
+    .hero-content { position: relative; z-index: 2; }
+
+    .hero-tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: white;
+      background: var(--rose);
+      border-radius: 100px;
+      padding: 0.35rem 1.1rem;
+      margin-bottom: 1.6rem;
+      opacity: 0;
+      animation: riseIn 0.7s 0.3s forwards;
+    }
+
+    .hero-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(4.5rem, 16vw, 10rem);
+      font-weight: 600;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      background: linear-gradient(120deg, var(--rose) 0%, var(--peach) 45%, var(--lilac) 90%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      opacity: 0;
+      animation: riseIn 0.9s 0.5s forwards;
+    }
+
+    .hero-for {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(1.2rem, 3.5vw, 2rem);
+      font-weight: 400;
+      color: #999;
+      margin-top: 0.5rem;
+      opacity: 0;
+      animation: riseIn 0.9s 0.75s forwards;
+    }
+
+    .hero-sub {
+      margin-top: 1.6rem;
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: #bbb;
+      opacity: 0;
+      animation: riseIn 0.9s 1s forwards;
+    }
+
+    .scroll-cue {
+      position: absolute;
+      bottom: 2.2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      opacity: 0;
+      animation: riseIn 1s 1.4s forwards;
+    }
+    .scroll-cue span { font-size: 0.68rem; letter-spacing: 0.25em; text-transform: uppercase; color: #ccc; }
+    .arrow {
+      width: 18px; height: 18px;
+      border-right: 2px solid #ddd;
+      border-bottom: 2px solid #ddd;
+      transform: rotate(45deg);
+      animation: arrowBounce 1.5s infinite;
+    }
+    @keyframes arrowBounce {
+      0%,100% { transform:rotate(45deg) translateY(0); }
+      50%      { transform:rotate(45deg) translateY(7px); }
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0 2rem;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .divider-line { flex:1; height:1px; background:linear-gradient(90deg, transparent, #f5c5d2, transparent); }
+    .divider-icon { color: var(--rose); font-size: 1rem; }
+
+    /* ── LETTER ── */
+    .letter-section {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 5rem 2rem 4rem;
+    }
+
+    .section-eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 0.8rem;
+    }
+
+    .section-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 600;
+      color: #2b2b2b;
+      margin-bottom: 2rem;
+      line-height: 1.2;
+    }
+
+    .letter-card {
+      background: white;
+      border-radius: 24px;
+      padding: 3rem 2.8rem;
+      box-shadow: 0 10px 50px rgba(255, 94, 132, 0.1);
+      border: 1.5px solid #ffe4ed;
+      position: relative;
+    }
+
+    .letter-card::after {
+      content: '✦';
+      position: absolute;
+      bottom: 1.2rem;
+      right: 1.8rem;
+      font-size: 1.2rem;
+      color: #ffd6e4;
+    }
+
+    .letter-placeholder {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.2rem;
+      line-height: 2.1;
+      color: #ccc;
+      border: 2px dashed #f9d0dd;
+      border-radius: 14px;
+      padding: 2.2rem 2rem;
+      text-align: center;
+    }
+
+    .letter-placeholder .hint {
+      display: block;
+      font-family: 'DM Sans', sans-serif;
+      font-style: normal;
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #e8b0bf;
+      margin-bottom: 1rem;
+    }
+
+    .letter-sign {
+      margin-top: 2rem;
+      text-align: right;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: #aaa;
+    }
+
+    .letter-body p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.18rem;
+      line-height: 2;
+      color: #4a4a4a;
+      margin-bottom: 1.6rem;
+    }
+
+    .letter-body p:last-child { margin-bottom: 0; }
+
+    /* ── MUSIC ── */
+    .music-section {
+      background: linear-gradient(150deg, #fff0f6 0%, #fffce8 50%, #eef8ff 100%);
+      padding: 5rem 2rem;
+    }
+
+    .music-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .song-image-wrap {
+      margin-top: 2.5rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .song-image-wrap img {
+      width: 100%;
+      max-width: 420px;
+      border-radius: 28px;
+      box-shadow: 0 16px 56px rgba(120, 80, 200, 0.15);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .song-image-wrap img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 24px 64px rgba(255, 94, 132, 0.2);
+    }
+
+    .song-hint {
+      margin-top: 1.2rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #ccc;
+    }
+
+    /* ── CLOSING ── */
+    .closing {
+      text-align: center;
+      padding: 5rem 2rem 6rem;
+    }
+
+    .closing-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+      color: #d4aab8;
+      line-height: 1.8;
+    }
+
+    .closing-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 8vw, 5rem);
+      font-weight: 600;
+      background: linear-gradient(120deg, var(--rose), var(--peach), var(--lilac));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: block;
+      margin-top: 0.6rem;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.78rem;
+      color: #ccc;
+      letter-spacing: 0.1em;
+      border-top: 1px solid #f5e8ed;
+    }
+    footer span { color: var(--rose); }
+
+    /* ── KEYFRAMES ── */
+    @keyframes riseIn {
+      from { opacity:0; transform:translateY(30px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.9s ease, transform 0.9s ease;
+    }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+
+    #hc {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.15;
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="hc"></canvas>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+  <div class="blob b4"></div>
+  <div class="blob b5"></div>
+
+  <div class="hero-content">
+    <span class="hero-tag">this is for you</span>
+    <h1 class="hero-name">Chrisha</h1>
+    <p class="hero-for">to you, whom i admire</p>
+    <p class="hero-sub">scroll down, take your time 🌸</p>
+  </div>
+
+  <div class="scroll-cue">
+    <span>scroll</span>
+    <div class="arrow"></div>
+  </div>
+</section>
+
+<!-- DIVIDER -->
+<div class="divider reveal" style="padding-top:3rem;">
+  <div class="divider-line"></div>
+  <span class="divider-icon">✦</span>
+  <div class="divider-line"></div>
+</div>
+
+<!-- LETTER -->
+<section class="letter-section reveal">
+  <p class="section-eyebrow">a message</p>
+  <h2 class="section-heading">Dear Chrisha,</h2>
+  <div class="letter-card">
+    <div class="letter-body">
+      <p>Life is meant to be unfair—but you are the reason luck exists. To meet you is something I prayed for every single night: for a goddess to descend and make me smile. It would be too easy to compare you to a saint, because your kindness goes far beyond that.</p>
+      <p>The words that leave your lips sound sweeter than Mozart's greatest symphony. Your existence is one in a million—to be by your side is to feel dopamine coursing through every nerve, a presence I could never learn to live without.</p>
+      <p>A beauty that no lens could ever capture. An unshaken, unobtainable portrait that puts Aphrodite herself to shame. A beauty too vast for mortal words to hold—one that carries an essence the world did not know it was missing, until you arrived and made it whole.</p>
+      <p>And perhaps that is what you are: not just someone I was lucky enough to find, but the very proof that the universe, in all its chaos and indifference, still knows how to be kind. You are the exception to every unfair thing life has ever handed me—and I would pray a thousand more nights just to deserve a single moment of you.</p>
+    </div>
+    <p class="letter-sign">— lhuwer</p>
+  </div>
+</section>
+
+<!-- DIVIDER -->
+<div class="divider reveal">
+  <div class="divider-line"></div>
+  <span class="divider-icon">♡</span>
+  <div class="divider-line"></div>
+</div>
+
+<!-- MUSIC -->
+<div class="music-section reveal">
+  <div class="music-inner">
+    <p class="section-eyebrow">a song</p>
+    <h2 class="section-heading">This one's for you 🎵</h2>
+    <div class="song-image-wrap">
+      <img src="song.jpg" alt="A song for Chrisha" />
+    </div>
+    <p class="song-hint">open Spotify and scan the code above 🎶</p>
+  </div>
+</div>
+
+<!-- CLOSING -->
+<section class="closing reveal">
+  <p class="closing-text">
+    every song, every word —<br/>all of it is for you.
+  </p>
+  <span class="closing-name">Chrisha ♡</span>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  made with <span>♥</span> just for chrisha
+</footer>
+
+<script>
+  // scroll reveal
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  // floating hearts
+  const canvas = document.getElementById('hc');
+  const ctx = canvas.getContext('2d');
+  let W, H;
+
+  function resize() { W = canvas.width = innerWidth; H = canvas.height = innerHeight; }
+  resize();
+  addEventListener('resize', resize);
+
+  const COLS = ['#ff5e84','#ffaa6e','#5ef5b0','#5ec8f5','#c579f5','#ffdd88'];
+
+  function heart(x, y, s, col, a) {
+    ctx.save();
+    ctx.globalAlpha = a;
+    ctx.fillStyle = col;
+    ctx.beginPath();
+    ctx.moveTo(x, y);
+    ctx.bezierCurveTo(x, y-s*0.3, x-s*0.5, y-s*0.65, x-s*0.5, y-s*0.95);
+    ctx.bezierCurveTo(x-s*0.5, y-s*1.38, x, y-s*1.38, x, y-s*1.05);
+    ctx.bezierCurveTo(x, y-s*1.38, x+s*0.5, y-s*1.38, x+s*0.5, y-s*0.95);
+    ctx.bezierCurveTo(x+s*0.5, y-s*0.65, x, y-s*0.3, x, y);
+    ctx.fill();
+    ctx.restore();
+  }
+
+  const hearts = Array.from({length: 22}, () => ({
+    x:  Math.random() * innerWidth,
+    y:  Math.random() * innerHeight + innerHeight,
+    s:  8 + Math.random() * 20,
+    sp: 0.3 + Math.random() * 0.9,
+    dr: (Math.random() - 0.5) * 0.7,
+    col: COLS[Math.floor(Math.random() * COLS.length)],
+    a:  0.35 + Math.random() * 0.55,
+  }));
+
+  (function tick() {
+    ctx.clearRect(0, 0, W, H);
+    hearts.forEach(h => {
+      h.y -= h.sp; h.x += h.dr;
+      if (h.y < -40) { h.y = H + 40; h.x = Math.random() * W; }
+      heart(h.x, h.y, h.s, h.col, h.a);
+    });
+    requestAnimationFrame(tick);
+  })();
+</script>
+</body>
+</html>
